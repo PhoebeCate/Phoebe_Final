@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phoebe Cate Mercado</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+  /* General Style */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #000;
+  background-color: #fff;
+  line-height: 1.6;
+}
+
+/* Header Section */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: white;
+  color: black;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+header:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+/* Logo */
+.logo a {
+  font-size: 2rem; /* Prominent text size */
+  font-weight: 700; /* Bold font */
+  color: black; /* Black text color */
+  text-transform: uppercase; /* All caps */
+  text-decoration: none; /* No underline */
+  cursor: pointer; /* Clickable */
+  transition: color 0.3s ease;
+}
+
+.logo a:hover {
+  color: #888; /* Subtle color change on hover */
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px; /* Space between menu items */
+  margin: 0;
+  padding: 0;
+  align-items: center; /* Align with logo */
+  transition: max-height 0.3s ease-out; /* Smooth transition for show/hide */
+  max-height: 1000px; /* Ensure the menu is large enough when shown */
+}
+
+nav ul li a {
+  font-size: 1rem; /* Standard text size */
+  font-weight: 500; /* Medium weight */
+  color: black; /* Black text color */
+  text-transform: uppercase; /* All caps */
+  padding: 8px 12px; /* Inner spacing */
+  border-radius: 3px; /* Slightly rounded corners */
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: white;
+  background-color: black; /* Invert colors on hover */
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+  display: none; /* Hidden by default */
+  font-size: 40px;
+  color: black; /* Black icon */
+  cursor: pointer;
+  position: absolute; /* Position to top right */
+  top: 10px; /* Adjust distance from top */
+  right: 20px; /* Adjust distance from right */
+  transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+  transform: rotate(90deg); /* Rotate on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  nav ul {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background: white; /* Background for dropdown */
+    padding: 10px;
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    display: none; /* Hide by default */
+    max-height: 0; /* Initially collapsed */
+    overflow: hidden; /* Hide content outside the max height */
+  }
+
+  nav ul.show {
+    display: flex;
+    max-height: 1000px; /* Show menu when 'show' class is added */
+  }
+
+  nav ul li {
+    margin: 5px 0;
+  }
+
+  nav ul li a {
+    text-align: center;
+    width: 100%;
+  }
+
+  .menu-toggle {
+    display: block; /* Show toggle button */
+  }
+}
+
+/* Landing Page Section */
+.hero-container {
+  text-align: center;
+  padding: 5rem 2rem;
+  background: linear-gradient(90deg, #fff, #ccc);
+}
+
+.hero-container h1 {
+  font-size: 3rem;
+  letter-spacing: 2px;
+}
+
+.hero-container p {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  color: #333;
+}
+
+.hero-container a {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  margin-top: 1.5rem;
+  color: #000;
+  background-color: #eee;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.hero-container a:hover {
+  background-color: #ddd;
+}
+
+section {
+  padding: 4rem 2rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* About Me Section */
+#about {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;  /* Optional padding to add space on sides */
+  box-sizing: border-box;
+}
+
+/* About Box Styling */
+#about .about-box {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Ensures it fits inside the container */
+  text-align: center;
+  box-sizing: border-box;
+}
+
+#about h2 {
+  font-size: 2.5rem;
+  color: black;
+  margin-bottom: 1rem;
+}
+
+#about p {
+  color: #666;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 1.5rem auto;
+}
+
+#about .btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  color: #fff;
+  background-color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 1.5rem;
+}
+
+#about .btn:hover {
+  background-color: #444;
+}
+
+/* Project Sections */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* Default for mobile view: 1 column */
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .project-grid {
+    grid-template-columns: repeat(4, 1fr); /* For desktop or large screens: 4 columns */
+  }
+}
+
+.project-card {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-card img {
+  width: 100%;
+  display: block;
+}
+
+.project-content {
+  padding: 1rem;
+}
+
+.project-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+  color: black;
+}
+
+.project-content p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Contact Section */
+#socials {
+  max-width: 2000px;  /* Max width same as your container */
+  margin: 0 auto;     /* Center the container */
+  padding: 0 0rem;    /* Padding for some space on both sides */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Social Box Container */
+#socials .social-box {
+  background-color: #f9f9f9;  /* Light background for the box */
+  border-radius: 10px;      /* Rounded corners */
+  padding: 2rem;            /* Padding around the social items */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  width: 100%;              /* Take full width of the container */
+  display: flex;            /* Flexbox to center the items */
+  justify-content: center;  /* Center the content */
+  align-items: center;      /* Align items vertically */
+  box-sizing: border-box;   /* Include padding in width calculation */
+}
+
+/* Social Links List */
+#socials ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);  /* Default: 1 column for mobile */
+  gap: 1rem;
+  margin: 0;  /* Remove margin around the list */
+  padding: 0;
+  width: 100;
+  max-width: 100%;
+}
+
+/* Individual Social Item */
+.social-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0""rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.social-item a {
+  color: black;
+  text-decoration: none;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.social-item i {
+  font-size: 2rem;
+  color: black;
+}
+
+.social-item span {
+  font-size: 1rem;
+  color: #666;
+}
+
+.social-item small {
+  font-size: 0.9rem;
+  color: #888;
+  margin-top: 0.5rem;
+}
+
+#socials a:hover {
+  color: #333;
+}
+
+/* Responsive Layout */
+@media (min-width: 768px) {
+  #socials ul {
+    grid-template-columns: repeat(5, 1fr);  /* 5 columns for desktop */
+  }
+}
+
+/* For Mobile View (1 Column, 5 Rows) */
+@media (max-width: 767px) {
+  #socials ul {
+    grid-template-columns: repeat(1, 1fr);  /* 1 column for mobile */
+  }
+}
+
+/* Footer Section */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: white;
+  border-top: 1px solid #ddd;
+  font-size: 1rem;
+  color: #666;
+  width: 100%; /* Ensure the footer takes up the full width */
+  position: fixed; /* Fixed position at the bottom */
+  bottom: 0; /* Stick it to the bottom of the screen */
+  z-index: 1000; /* Keep it above other elements */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  footer {
+    padding: 0.8rem; /* Adjust padding for mobile */
+    font-size: 0.9rem; /* Slightly smaller font size on mobile */
+    color: #666;
+  }
+}
+</style>
+
+</head>
+
+<body>
+  <header>
+<div class="logo">
+  <a href="#top">PHOEBE PORTFOLIO</a>
+</div>
+<!-- Menu Toggle Button -->
+<div class="menu-toggle" id="menu-toggle">
+  <i class="fas fa-bars"></i>
+</div>
+  <!-- Navigation Menu -->
+  <nav>
+    <ul id="menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="hero-container" id="home">
+ <h1>Dynamic Creator & Performance Artist</h1>
+ <p>Where creativity meets dedication, bringing art to life through performance.</p>
+ <a href="#about">Discover More</a>
+</div>
+
+  <section id="about">
+  <!-- About Box Wrapper -->
+  <div class="about-box">
+    <h2>About Me</h2>
+    <p>Hello! I am a 20-year-old dancer and singer with a deep love for expressing myself through movement and music. Dancing has always been my passion, allowing me to communicate emotions and stories in a way words cannot. Singing complements this by giving voice to my feelings and enhancing my creative journey.</p>
+    <p>When I’m not performing, you’ll often find me on the volleyball court, where I enjoy the thrill of teamwork and competition. Playing volleyball keeps me energized and sharp, both mentally and physically. It's my way of balancing my active lifestyle with the joys of community and collaboration.</p>
+    <p>In my downtime, I unwind by diving into the world of K-dramas. The captivating storylines and rich characters inspire me and fuel my creativity. These moments of relaxation recharge me, allowing me to pursue my passions with even more enthusiasm. Let’s connect and explore the beauty of creativity together!</p>
+    <a href="#projects" class="btn btn-secondary">See My Work</a>
+  </div>
+</section>
+
+  <section id="projects">
+ <h2>Projects</h2>
+ <div class="project-grid">
+  <!-- Dance Performances -->
+  <div class="project-card">
+   <img src="dance.jpeg" alt="Dance Performances">
+   <div class="project-content">
+    <h3>Dance Performances</h3>
+    <p>Experience my dynamic dance performances that blend emotion, storytelling, and technical skill. From live stage shows to innovative collaborations, these projects showcase the artistry and passion I bring to every routine.</p>
+   </div>
+  </div>
+
+  <!-- Vocal Projects -->
+  <div class="project-card">
+   <img src="sing.jpeg" alt="Vocal Performances">
+   <div class="project-content">
+    <h3>Vocal Performances</h3>
+    <p>Discover my vocal journey through heartfelt performances that connect with audiences on an emotional level. These projects highlight my dedication to music and the power of voice as an expressive tool.</p>
+   </div>
+  </div>
+
+  <!-- Volleyball Highlights -->
+  <div class="project-card">
+   <img src="volleyball.jpeg" alt="Volleyball Highlights">
+   <div class="project-content">
+    <h3>Volleyball Highlights</h3>
+    <p>Relive the excitement of volleyball through my experiences on the court. These projects showcase the energy, teamwork, and competitive spirit that fuel my passion for sports.</p>
+   </div>
+  </div>
+
+  <!-- K-Drama Inspired Projects -->
+  <div class="project-card">
+   <img src="kdrama.jpeg" alt="K-Drama Inspired Projects">
+   <div class="project-content">
+    <h3>K-Drama Inspirations</h3>
+    <p>Explore the creative fusion of K-drama storytelling and artistic expression. These projects celebrate the emotional depth and narrative power that K-dramas inspire in my work, blending culture and creativity.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div id="socials">
+  <!-- Socials Container Box -->
+  <div class="social-box">
+    <ul>
+      <li>
+        <div class="social-item">
+          <a href="tel:+1234567890">
+            <i class="fas fa-phone"></i>
+            <span>09101099018</span>
+            <small>Call Now</small>
+          </a>
+        </div>
+      </li>
+      <li>
+        <div class="social-item">
+          <a href="https://www.facebook.com/Phoebecate2004" target="_blank">
+            <i class="fab fa-facebook"></i>
+            <span>Phoebe Cate Mercado</span>
+            <small>facebook.com/Phoebecate2004</small>
+          </a>
+        </div>
+      </li>
+      <li>
+        <div class="social-item">
+          <a href="https://www.instagram.com/only_phoebqe" target="_blank">
+            <i class="fab fa-instagram"></i>
+            <span>@only_phoebqe</span>
+            <small>instagram.com/only_phoebqe</small>
+          </a>
+        </div>
+      </li>
+      <li>
+        <div class="social-item">
+          <a href="https://www.tiktok.com/@youcantfindphoebe" target="_blank">
+            <i class="fab fa-tiktok"></i>
+            <span>Phoebe</span>
+            <small>tiktok.com/@youcantfindphoebe</small>
+          </a>
+        </div>
+      </li>
+      <li>
+        <div class="social-item">
+          <a href="mailto:mercadophoebecate406@gmail.com">
+            <i class="fas fa-envelope"></i>
+            <span>Phoebe Cate Mercado</span>
+            <small>mercadophoebe014@gmail.com</small>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<footer>
+  <p>&copy; 2024 Phoebe Cate Mercado. All rights reserved.</p>
+</footer>
+
+<script>
+// JavaScript to toggle the mobile menu
+function toggleMenu() {
+const nav = document.querySelector('nav ul');
+nav.classList.toggle('active');
+}
+</script>
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navMenu = document.querySelector('nav ul');
+
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('show'); // Toggles the 'show' class on the navigation menu
+  });
+</script>
+</body>
+</html>
